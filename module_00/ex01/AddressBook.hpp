@@ -1,5 +1,5 @@
-#ifndef ADDRESSBOOK_H
-#define ADDRESSBOOK_H
+#ifndef ADDRESSBOOK_HPP
+#define ADDRESSBOOK_HPP
 
 #include <iostream>
 
