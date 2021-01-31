@@ -8,12 +8,12 @@
 #include "Contact.hpp"
 
 bool is_integer(const std::string& s) {
-    if (s.empty() || (!std::isdigit(s[0]) && s[0] != '+')) {
+    if (s.empty() || !isdigit(s[0]) || (s.size() > 1 && s[0] == '0')) {
         return false;
     }
 
     char* endptr;
-    std::strtol(s.c_str(), &endptr, 10);
+    strtol(s.c_str(), &endptr, 10);
 
     return (*endptr == '\0');
 }

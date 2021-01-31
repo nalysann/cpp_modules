@@ -115,10 +115,10 @@ void Account::displayStatus() const {
 }
 
 void Account::_displayTimestamp() {
-    std::time_t now = time(0);
-    std::tm local = *localtime(&now);
+    time_t now = time(0);
+    tm local = *localtime(&now);
     char buf[42];
-    std::strftime(buf, sizeof(buf), "%Y%m%d_%H%M%S", &local);
+    strftime(buf, sizeof(buf), "%Y%m%d_%H%M%S", &local);
     std::cout << '[' << buf << ']';
 }
 
