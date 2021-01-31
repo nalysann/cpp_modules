@@ -1,0 +1,18 @@
+# CLion
+.idea/
+cmake-build-debug/
+
+# macOS
+.DS_Store
+
+# compilation artifacts
+*.o
+*.d
+*.out
+
+# valgrind
+*.dSYM/
+
+# module 00
+megaphone
+phonebook
