@@ -18,35 +18,35 @@ bool is_integer(const std::string& s) {
     return (*endptr == '\0');
 }
 
-void print_field(size_t n) {
-    std::cout << std::setw(AddressBook::COLUMN_WIDTH)
-              << n
-              << AddressBook::COLUMN_SEP;
+void print_field(std::ostream& os, size_t n) {
+    os << std::setw(AddressBook::COLUMN_WIDTH)
+       << n
+       << AddressBook::COLUMN_SEP;
 }
 
-void print_field(const std::string& s, bool is_last) {
+void print_field(std::ostream& os, const std::string& s, bool is_last) {
     if (static_cast<int>(s.size()) <= AddressBook::COLUMN_WIDTH) {
-        std::cout << std::setw(AddressBook::COLUMN_WIDTH) << s;
+        os << std::setw(AddressBook::COLUMN_WIDTH) << s;
     } else {
-        std::cout << std::setw(AddressBook::COLUMN_WIDTH - 1) << s << '.';
+        os << std::setw(AddressBook::COLUMN_WIDTH - 1) << s << '.';
     }
     if (!is_last) {
-        std::cout << AddressBook::COLUMN_SEP;
+        os << AddressBook::COLUMN_SEP;
     } else {
-        std::cout << std::endl;
+        os << std::endl;
     }
 }
 
-void print_header() {
-    print_field("Index", false);
-    print_field("First name", false);
-    print_field("Last name", false);
-    print_field("Nickname", true);
+void print_header(std::ostream& os) {
+    print_field(os, "Index", false);
+    print_field(os, "First name", false);
+    print_field(os, "Last name", false);
+    print_field(os, "Nickname", true);
 }
 
-void print_line(size_t index, const Contact& contact) {
-    print_field(index);
-    print_field(contact.first_name, false);
-    print_field(contact.last_name, false);
-    print_field(contact.nickname, true);
+void print_line(std::ostream& os, size_t index, const Contact& contact) {
+    print_field(os, index);
+    print_field(os, contact.get_first_name(), false);
+    print_field(os, contact.get_last_name(), false);
+    print_field(os, contact.get_nickname(), true);
 }

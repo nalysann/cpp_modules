@@ -6,14 +6,14 @@
 #include "utils.hpp"
 
 AddressBook::AddressBook()
-    : size(0)
-    , size_non_empty(0)
+    : _size(0)
+    , _size_non_empty(0)
 {}
 
 void AddressBook::add(const Contact& contact) {
-    if (size >= MAX_SIZE) {
+    if (_size >= _MAX_SIZE) {
         std::cout << "Address book is full, enter a number from 1 to "
-                  << MAX_SIZE << " to overwrite the" << std::endl
+                  << _MAX_SIZE << " to overwrite the" << std::endl
                   << "existing contact or anything else to abort the current operation: ";
 
         std::string input;
@@ -21,34 +21,34 @@ void AddressBook::add(const Contact& contact) {
 
         if (is_integer(input)) {
             size_t index = strtol(input.c_str(), NULL, 10);
-            if (1 <= index && index <= MAX_SIZE) {
-                if (!contacts[index - 1].is_empty()) {
-                    --size_non_empty;
+            if (1 <= index && index <= _MAX_SIZE) {
+                if (!_contacts[index - 1].is_empty()) {
+                    --_size_non_empty;
                 }
                 if (!contact.is_empty()) {
-                    ++size_non_empty;
+                    ++_size_non_empty;
                 }
-                contacts[index - 1] = contact;
+                _contacts[index - 1] = contact;
             }
         }
     } else {
         if (!contact.is_empty()) {
-            ++size_non_empty;
+            ++_size_non_empty;
         }
-        contacts[size++] = contact;
+        _contacts[_size++] = contact;
     }
 }
 
 const Contact& AddressBook::get_contact(size_t index) const {
-    return contacts[index];
+    return _contacts[index];
 }
 
 size_t AddressBook::get_size() const {
-    return size;
+    return _size;
 }
 
 size_t AddressBook::get_size_non_empty() const {
-    return size_non_empty;
+    return _size_non_empty;
 }
 
 void AddressBook::search(std::string& input) const {
@@ -72,15 +72,15 @@ void AddressBook::search(std::string& input) const {
 
 std::ostream& operator<<(std::ostream& os, const AddressBook& address_book) {
     if (address_book.get_size_non_empty() > 0) {
-        print_header();
+        print_header(os);
         for (size_t i = 0; i < address_book.get_size(); ++i) {
             const Contact& contact = address_book.get_contact(i);
             if (!contact.is_empty()) {
-                print_line(i + 1, contact);
+                print_line(os, i + 1, contact);
             }
         }
     } else {
-        os << "There are no non-empty contacts in the address book";
+        os << "There are no non-empty contacts in the address book!";
     }
     return os;
 }

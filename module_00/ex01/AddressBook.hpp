@@ -19,11 +19,11 @@ class AddressBook {
     static const char COLUMN_SEP = '|';
 
   private:
-    static const size_t MAX_SIZE = 8;
+    static const size_t _MAX_SIZE = 8;
 
-    Contact contacts[MAX_SIZE];
-    size_t size;
-    size_t size_non_empty;
+    Contact _contacts[_MAX_SIZE];
+    size_t _size;
+    size_t _size_non_empty;
 };
 
 std::ostream& operator<<(std::ostream& os, const AddressBook& address_book);
