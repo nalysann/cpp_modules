@@ -6,44 +6,44 @@
 
 class Contact {
   public:
-    const std::string& get_first_name() const;
-    const std::string& get_last_name() const;
-    const std::string& get_nickname() const;
-    const std::string& get_login() const;
-    const std::string& get_postal_address() const;
-    const std::string& get_email_address() const;
-    const std::string& get_phone_number() const;
-    const std::string& get_birthday_date() const;
-    const std::string& get_favorite_meal() const;
-    const std::string& get_underwear_color() const;
-    const std::string& get_darkest_secret() const;
+    const std::string& getFirstName() const;
+    const std::string& getLastName() const;
+    const std::string& getNickname() const;
+    const std::string& getLogin() const;
+    const std::string& getPostalAddress() const;
+    const std::string& getEmailAddress() const;
+    const std::string& getPhoneNumber() const;
+    const std::string& getBirthdayDate() const;
+    const std::string& getFavoriteMeal() const;
+    const std::string& getUnderwearColor() const;
+    const std::string& getDarkestSecret() const;
 
-    void set_first_name(const std::string& first_name);
-    void set_last_name(const std::string& last_name);
-    void set_nickname(const std::string& nickname);
-    void set_login(const std::string& login);
-    void set_postal_address(const std::string& postal_address);
-    void set_email_address(const std::string& email_address);
-    void set_phone_number(const std::string& phone_number);
-    void set_birthday_date(const std::string& birthday_date);
-    void set_favorite_meal(const std::string& favorite_meal);
-    void set_underwear_color(const std::string& underwear_color);
-    void set_darkest_secret(const std::string& darkest_secret);
+    void setFirstName(const std::string& first_name);
+    void setLastName(const std::string& last_name);
+    void setNickname(const std::string& nickname);
+    void setLogin(const std::string& login);
+    void setPostalAddress(const std::string& postal_address);
+    void setEmailAddress(const std::string& email_address);
+    void setPhoneNumber(const std::string& phone_number);
+    void setBirthdayDate(const std::string& birthday_date);
+    void setFavoriteMeal(const std::string& favorite_meal);
+    void setUnderwearColor(const std::string& underwear_color);
+    void setDarkestSecret(const std::string& darkest_secret);
 
-    bool is_empty() const;
+    bool isEmpty() const;
 
   private:
-    std::string _first_name;
-    std::string _last_name;
+    std::string _firstName;
+    std::string _lastName;
     std::string _nickname;
     std::string _login;
-    std::string _postal_address;
-    std::string _email_address;
-    std::string _phone_number;
-    std::string _birthday_date;
-    std::string _favorite_meal;
-    std::string _underwear_color;
-    std::string _darkest_secret;
+    std::string _postalAddress;
+    std::string _emailAddress;
+    std::string _phoneNumber;
+    std::string _birthdayDate;
+    std::string _favoriteMeal;
+    std::string _underwearColor;
+    std::string _darkestSecret;
 };
 
 std::istream& operator>>(std::istream& is, Contact& contact);

@@ -8,12 +8,12 @@ class Pony {
     explicit Pony(const std::string& name);
     ~Pony();
 
-    static void print_pony_population();
+    static void printPonyPopulation();
 
-    void make_magic() const;
+    void makeMagic() const;
 
   private:
-    static size_t _pony_population;
+    static size_t _ponyPopulation;
 
     const std::string _name;
 };

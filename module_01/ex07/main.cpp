@@ -22,14 +22,14 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
-        std::ifstream ifs(filename);
+        std::ifstream ifs(filename.c_str());
         if (ifs.fail()) {
             std::cout << "replace: " << filename
                       << ": File couldn't be opened" << std::endl;
             return 1;
         }
 
-        std::ofstream ofs(new_filename);
+        std::ofstream ofs(new_filename.c_str());
         if (ofs.fail()) {
             std::cout << "replace: " << new_filename
                       << ": File couldn't be created" << std::endl;

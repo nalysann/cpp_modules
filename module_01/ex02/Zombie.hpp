@@ -5,11 +5,11 @@
 
 class Zombie {
   private:
-    static std::string _get_random_name(size_t size = 8);
+    static std::string _getRandomName(size_t size = 8);
 
   public:
     explicit Zombie(const std::string& type = "crawler",
-                    const std::string& name = _get_random_name());
+                    const std::string& name = _getRandomName());
 
     void announce() const;
 

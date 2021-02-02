@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 
-std::string Zombie::_get_random_name(size_t size) {
-    std::string s(size, '\0');
+std::string Zombie::_getRandomName(size_t size) {
+    std::string name(size, '\0');
 
     const std::string alphanum(
             "0123456789"
@@ -13,10 +13,10 @@ std::string Zombie::_get_random_name(size_t size) {
             "abcdefghijklmnopqrstuvwxyz");
 
     for (size_t i = 0; i < size; ++i) {
-        s[i] = alphanum[rand() % (alphanum.size() - 1)];
+        name[i] = alphanum[rand() % (alphanum.size() - 1)];
     }
 
-    return s;
+    return name;
 }
 
 Zombie::Zombie(const std::string& type, const std::string& name)

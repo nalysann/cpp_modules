@@ -7,7 +7,7 @@
 #include "AddressBook.hpp"
 #include "Contact.hpp"
 
-bool is_integer(const std::string& s) {
+bool isInteger(const std::string& s) {
     if (s.empty() || !isdigit(s[0]) || (s.size() > 1 && s[0] == '0')) {
         return false;
     }
@@ -18,13 +18,13 @@ bool is_integer(const std::string& s) {
     return (*endptr == '\0');
 }
 
-void print_field(std::ostream& os, size_t n) {
+static void printField(std::ostream& os, size_t n) {
     os << std::setw(AddressBook::COLUMN_WIDTH)
        << n
        << AddressBook::COLUMN_SEP;
 }
 
-void print_field(std::ostream& os, const std::string& s, bool is_last) {
+static void printField(std::ostream& os, const std::string& s, bool is_last) {
     if (static_cast<int>(s.size()) <= AddressBook::COLUMN_WIDTH) {
         os << std::setw(AddressBook::COLUMN_WIDTH) << s;
     } else {
@@ -37,16 +37,16 @@ void print_field(std::ostream& os, const std::string& s, bool is_last) {
     }
 }
 
-void print_header(std::ostream& os) {
-    print_field(os, "Index", false);
-    print_field(os, "First name", false);
-    print_field(os, "Last name", false);
-    print_field(os, "Nickname", true);
+void printHeader(std::ostream& os) {
+    printField(os, "Index", false);
+    printField(os, "First name", false);
+    printField(os, "Last name", false);
+    printField(os, "Nickname", true);
 }
 
-void print_line(std::ostream& os, size_t index, const Contact& contact) {
-    print_field(os, index);
-    print_field(os, contact.get_first_name(), false);
-    print_field(os, contact.get_last_name(), false);
-    print_field(os, contact.get_nickname(), true);
+void printLine(std::ostream& os, size_t index, const Contact& contact) {
+    printField(os, index);
+    printField(os, contact.getFirstName(), false);
+    printField(os, contact.getLastName(), false);
+    printField(os, contact.getNickname(), true);
 }

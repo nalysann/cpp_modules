@@ -12,13 +12,12 @@ void Human::action (const std::string& action_name,
             "melee",
             "ranged",
             "shout",
-
     };
 
-    static const Human::attack_function functions[_NUM_ACTIONS] = {
-           &Human::_meleeAttack,
-           &Human::_rangedAttack,
-           &Human::_intimidatingShout,
+    static const Human::attackFunction functions[_NUM_ACTIONS] = {
+            &Human::_meleeAttack,
+            &Human::_rangedAttack,
+            &Human::_intimidatingShout,
     };
 
     for (size_t i = 0; i < _NUM_ACTIONS; ++i) {

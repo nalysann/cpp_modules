@@ -2,96 +2,96 @@
 
 #include "Contact.hpp"
 
-const std::string& Contact::get_first_name() const {
-    return _first_name;
+const std::string& Contact::getFirstName() const {
+    return _firstName;
 }
 
-const std::string& Contact::get_last_name() const {
-    return _last_name;
+const std::string& Contact::getLastName() const {
+    return _lastName;
 }
 
-const std::string& Contact::get_nickname() const {
+const std::string& Contact::getNickname() const {
     return _nickname;
 }
 
-const std::string& Contact::get_login() const {
+const std::string& Contact::getLogin() const {
     return _login;
 }
 
-const std::string& Contact::get_postal_address() const {
-    return _postal_address;
+const std::string& Contact::getPostalAddress() const {
+    return _postalAddress;
 }
 
-const std::string& Contact::get_email_address() const {
-    return _email_address;
+const std::string& Contact::getEmailAddress() const {
+    return _emailAddress;
 }
 
-const std::string& Contact::get_phone_number() const {
-    return _phone_number;
+const std::string& Contact::getPhoneNumber() const {
+    return _phoneNumber;
 }
 
-const std::string& Contact::get_birthday_date() const {
-    return _birthday_date;
+const std::string& Contact::getBirthdayDate() const {
+    return _birthdayDate;
 }
 
-const std::string& Contact::get_favorite_meal() const {
-    return _favorite_meal;
+const std::string& Contact::getFavoriteMeal() const {
+    return _favoriteMeal;
 }
 
-const std::string& Contact::get_underwear_color() const {
-    return _underwear_color;
+const std::string& Contact::getUnderwearColor() const {
+    return _underwearColor;
 }
 
-const std::string& Contact::get_darkest_secret() const {
-    return _darkest_secret;
+const std::string& Contact::getDarkestSecret() const {
+    return _darkestSecret;
 }
 
-void Contact::set_first_name(const std::string& first_name) {
-    _first_name = first_name;
+void Contact::setFirstName(const std::string& first_name) {
+    _firstName = first_name;
 }
 
-void Contact::set_last_name(const std::string& last_name) {
-    _last_name = last_name;
+void Contact::setLastName(const std::string& last_name) {
+    _lastName = last_name;
 }
 
-void Contact::set_nickname(const std::string& nickname) {
+void Contact::setNickname(const std::string& nickname) {
     _nickname = nickname;
 }
 
-void Contact::set_login(const std::string& login) {
+void Contact::setLogin(const std::string& login) {
     _login = login;
 }
 
-void Contact::set_postal_address(const std::string& postal_address) {
-    _postal_address = postal_address;
+void Contact::setPostalAddress(const std::string& postal_address) {
+    _postalAddress = postal_address;
 }
 
-void Contact::set_email_address(const std::string& email_address) {
-    _email_address = email_address;
+void Contact::setEmailAddress(const std::string& email_address) {
+    _emailAddress = email_address;
 }
 
-void Contact::set_phone_number(const std::string& phone_number) {
-    _phone_number = phone_number;
+void Contact::setPhoneNumber(const std::string& phone_number) {
+    _phoneNumber = phone_number;
 }
 
-void Contact::set_birthday_date(const std::string& birthday_date) {
-    _birthday_date = birthday_date;
+void Contact::setBirthdayDate(const std::string& birthday_date) {
+    _birthdayDate = birthday_date;
 }
 
-void Contact::set_favorite_meal(const std::string& favorite_meal) {
-    _favorite_meal = favorite_meal;
+void Contact::setFavoriteMeal(const std::string& favorite_meal) {
+    _favoriteMeal = favorite_meal;
 }
 
-void Contact::set_underwear_color(const std::string& underwear_color) {
-    _underwear_color = underwear_color;
+void Contact::setUnderwearColor(const std::string& underwear_color) {
+    _underwearColor = underwear_color;
 }
 
-void Contact::set_darkest_secret(const std::string& darkest_secret) {
-    _darkest_secret = darkest_secret;
+void Contact::setDarkestSecret(const std::string& darkest_secret) {
+    _darkestSecret = darkest_secret;
 }
 
-bool Contact::is_empty() const {
-    return _first_name.empty() && _last_name.empty() && _nickname.empty();
+bool Contact::isEmpty() const {
+    return _firstName.empty() && _lastName.empty() && _nickname.empty();
 }
 
 std::istream& operator>>(std::istream& is, Contact& contact) {
@@ -99,61 +99,61 @@ std::istream& operator>>(std::istream& is, Contact& contact) {
 
     std::cout << "Enter first name: ";
     getline(is, input);
-    contact.set_first_name(input);
+    contact.setFirstName(input);
 
     std::cout << "Enter last name: ";
     getline(is, input);
-    contact.set_last_name(input);
+    contact.setLastName(input);
 
     std::cout << "Enter nickname: ";
     getline(is, input);
-    contact.set_nickname(input);
+    contact.setNickname(input);
 
     std::cout << "Enter login: ";
     getline(is, input);
-    contact.set_login(input);
+    contact.setLogin(input);
 
     std::cout << "Enter postal address: ";
     getline(is, input);
-    contact.set_postal_address(input);
+    contact.setPostalAddress(input);
 
     std::cout << "Enter email address: ";
     getline(is, input);
-    contact.set_email_address(input);
+    contact.setEmailAddress(input);
 
     std::cout << "Enter phone number: ";
     getline(is, input);
-    contact.set_phone_number(input);
+    contact.setPhoneNumber(input);
 
     std::cout << "Enter birthday date: ";
     getline(is, input);
-    contact.set_birthday_date(input);
+    contact.setBirthdayDate(input);
 
     std::cout << "Enter favorite meal: ";
     getline(is, input);
-    contact.set_favorite_meal(input);
+    contact.setFavoriteMeal(input);
 
     std::cout << "Enter underwear color: ";
     getline(is, input);
-    contact.set_underwear_color(input);
+    contact.setUnderwearColor(input);
 
     std::cout << "Enter darkest secret: ";
     getline(is, input);
-    contact.set_darkest_secret(input);
+    contact.setDarkestSecret(input);
 
     return is;
 }
 
 std::ostream& operator<<(std::ostream& os, const Contact& contact) {
-    return os << "First name: " << contact.get_first_name() << std::endl
-              << "Last name: " << contact.get_last_name() << std::endl
-              << "Nickname: " << contact.get_nickname() << std::endl
-              << "Login: " << contact.get_login() << std::endl
-              << "Postal address: " << contact.get_postal_address() << std::endl
-              << "Email address: " << contact.get_email_address() << std::endl
-              << "Phone number: " << contact.get_phone_number() << std::endl
-              << "Birthday date: " << contact.get_birthday_date() << std::endl
-              << "Favorite meal: " << contact.get_favorite_meal() << std::endl
-              << "Underwear color: " << contact.get_underwear_color() << std::endl
-              << "Darkest secret: " << contact.get_darkest_secret();
+    return os << "First name: " << contact.getFirstName() << std::endl
+              << "Last name: " << contact.getLastName() << std::endl
+              << "Nickname: " << contact.getNickname() << std::endl
+              << "Login: " << contact.getLogin() << std::endl
+              << "Postal address: " << contact.getPostalAddress() << std::endl
+              << "Email address: " << contact.getEmailAddress() << std::endl
+              << "Phone number: " << contact.getPhoneNumber() << std::endl
+              << "Birthday date: " << contact.getBirthdayDate() << std::endl
+              << "Favorite meal: " << contact.getFavoriteMeal() << std::endl
+              << "Underwear color: " << contact.getUnderwearColor() << std::endl
+              << "Darkest secret: " << contact.getDarkestSecret();
 }

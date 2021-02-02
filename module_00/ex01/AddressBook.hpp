@@ -10,9 +10,9 @@ class AddressBook {
     AddressBook();
 
     void add(const Contact& contact);
-    const Contact& get_contact(size_t index) const;
-    size_t get_size() const;
-    size_t get_size_non_empty() const;
+    const Contact& getContact(size_t index) const;
+    size_t getSize() const;
+    size_t getSizeNonEmpty() const;
     void search(std::string& input) const;
 
     static const int COLUMN_WIDTH = 10;
@@ -23,7 +23,7 @@ class AddressBook {
 
     Contact _contacts[_MAX_SIZE];
     size_t _size;
-    size_t _size_non_empty;
+    size_t _sizeNonEmpty;
 };
 
 std::ostream& operator<<(std::ostream& os, const AddressBook& address_book);

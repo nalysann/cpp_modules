@@ -5,7 +5,7 @@
 
 class Logger {
   public:
-    typedef void (Logger::*log_function)(const std::string& message) const;
+    typedef void (Logger::*logFunction)(const std::string& message) const;
 
     explicit Logger(const std::string& filename);
 
@@ -13,7 +13,7 @@ class Logger {
              const std::string& message) const;
 
   private:
-    static std::string _get_timestamp();
+    static std::string _getTimestamp();
     static std::string _makeLogEntry(const std::string& message);
 
     static const size_t _NUM_FUNCTIONS = 2;

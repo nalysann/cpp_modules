@@ -5,33 +5,33 @@
 
 Pony::Pony(const std::string &name)
     : _name(name) {
-    ++_pony_population;
+    ++_ponyPopulation;
     std::cout << _name << " has joined the server." << std::endl;
 }
 
 Pony::~Pony() {
-    --_pony_population;
+    --_ponyPopulation;
     std::cout << _name << " has left the server." << std::endl;
 }
 
-void Pony::print_pony_population() {
-    std::cout << "There are currently " << _pony_population
+void Pony::printPonyPopulation() {
+    std::cout << "There are currently " << _ponyPopulation
               << " ponies on the server." << std::endl;
 }
 
-void Pony::make_magic() const {
+void Pony::makeMagic() const {
     std::cout << _name << " casts a random friendly spell on you!" << std::endl;
 }
 
-size_t Pony::_pony_population = 0;
+size_t Pony::_ponyPopulation = 0;
 
 void ponyOnTheStack(const std::string& name) {
     Pony pony(name);
-    pony.make_magic();
+    pony.makeMagic();
 }
 
 void ponyOnTheHeap(const std::string& name) {
     Pony* pony = new Pony(name);
-    pony->make_magic();
+    pony->makeMagic();
     delete pony;
 }

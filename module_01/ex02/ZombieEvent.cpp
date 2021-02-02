@@ -2,12 +2,12 @@
 #include "ZombieEvent.hpp"
 
 ZombieEvent::ZombieEvent(const std::string& type)
-    : _zombie_type(type) {}
+    : _zombieType(type) {}
 
 void ZombieEvent::setZombieType(const std::string& type) {
-    _zombie_type = type;
+    _zombieType = type;
 }
 
 Zombie* ZombieEvent::newZombie(const std::string& name) const {
-    return new Zombie(_zombie_type, name);
+    return new Zombie(_zombieType, name);
 }

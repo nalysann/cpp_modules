@@ -1,9 +1,9 @@
 #include "Pony.hpp"
 
 int main() {
-    Pony::print_pony_population();
+    Pony::printPonyPopulation();
     ponyOnTheStack("Fluttershy");
-    Pony::print_pony_population();
+    Pony::printPonyPopulation();
     ponyOnTheHeap("Twilight Sparkle");
-    Pony::print_pony_population();
+    Pony::printPonyPopulation();
 }

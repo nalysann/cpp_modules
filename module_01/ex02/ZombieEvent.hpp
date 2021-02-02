@@ -13,7 +13,7 @@ class ZombieEvent {
     Zombie* newZombie(const std::string& name) const;
 
   private:
-    std::string _zombie_type;
+    std::string _zombieType;
 };
 
 #endif

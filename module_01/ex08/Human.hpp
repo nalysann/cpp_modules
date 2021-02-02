@@ -5,12 +5,12 @@
 
 class Human {
   public:
-    typedef void (Human::*attack_function)(const std::string& target) const;
+    typedef void (Human::*attackFunction)(const std::string& target) const;
 
     explicit Human(const std::string& name);
 
-    void action (const std::string& action_name,
-                 const std::string& target) const;
+    void action(const std::string& action_name,
+                const std::string& target) const;
 
   private:
     void _meleeAttack(const std::string& target) const;

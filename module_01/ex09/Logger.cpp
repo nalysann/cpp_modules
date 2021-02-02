@@ -16,9 +16,9 @@ void Logger::log(const std::string& dest,
             "file",
     };
 
-    static const Logger::log_function functions[_NUM_FUNCTIONS] = {
-        &Logger::_logToConsole,
-        &Logger::_logToFile,
+    static const Logger::logFunction functions[_NUM_FUNCTIONS] = {
+            &Logger::_logToConsole,
+            &Logger::_logToFile,
     };
 
     for (size_t i = 0; i < _NUM_FUNCTIONS; ++i) {
@@ -31,7 +31,7 @@ void Logger::log(const std::string& dest,
     std::cout << "Unknown destination" << std::endl;
 }
 
-std::string Logger::_get_timestamp() {
+std::string Logger::_getTimestamp() {
     std::ostringstream os;
     time_t now = time(0);
     tm local = *localtime(&now);
@@ -42,7 +42,7 @@ std::string Logger::_get_timestamp() {
 }
 
 std::string Logger::_makeLogEntry(const std::string& message) {
-    return _get_timestamp() + ' ' + message;
+    return _getTimestamp() + ' ' + message;
 }
 
 void Logger::_logToConsole(const std::string& message) const {
@@ -50,7 +50,7 @@ void Logger::_logToConsole(const std::string& message) const {
 }
 
 void Logger::_logToFile(const std::string& message) const {
-    std::ofstream ofs(_filename, std::ios::app);
+    std::ofstream ofs(_filename.c_str(), std::ios::app);
 
     if (ofs.fail()) {
         std::cout << "Error: " << _filename

@@ -11,12 +11,12 @@ int main() {
         std::string query;
         getline(std::cin, query);
         if (query == "ADD") {
-            Contact new_contact;
-            std::cin >> new_contact;
-            address_book.add(new_contact);
+            Contact newContact;
+            std::cin >> newContact;
+            address_book.add(newContact);
         } else if (query == "SEARCH") {
             std::cout << address_book;
-            if (address_book.get_size_non_empty() > 0) {
+            if (address_book.getSizeNonEmpty() > 0) {
                 std::string input;
                 std::cout << "Enter the index of the desired contact "
                           << "or 0 to abort the current operation: ";
