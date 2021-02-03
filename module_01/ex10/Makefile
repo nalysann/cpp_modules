@@ -26,4 +26,4 @@ $(BIN): $(OBJ)
 include $(wildcard $(DEP))
 
 clean:
-	rm -f $(BIN) $(OBJ) $(DEP) *.log
+	rm -f $(BIN) $(OBJ) $(DEP)

@@ -60,5 +60,3 @@ void Logger::_logToFile(const std::string& message) const {
 
     ofs << _makeLogEntry(message) << std::endl;
 }
-
-

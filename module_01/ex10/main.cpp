@@ -1,10 +1,11 @@
+#include <cstdio>
 #include <fstream>
 #include <iostream>
 #include <string>
 
 void readFromConsole() {
     std::string input;
-    while (getline(std::cin, input)) {
+    while (std::getline(std::cin, input)) {
         std::cout << input << std::endl;
     }
 }
@@ -19,7 +20,7 @@ void readFromFile(const std::string& filename) {
     }
 
     std::string input;
-    while (getline(ifs, input)) {
+    while (std::getline(ifs, input)) {
         std::cout << input << std::endl;
     }
 }
