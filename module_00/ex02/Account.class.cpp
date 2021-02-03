@@ -74,7 +74,7 @@ void Account::makeDeposit(int deposit) {
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
-    if (checkAmount() >= withdrawal) {
+    if (_amount >= withdrawal) {
         _amount -= withdrawal;
         _totalAmount -= withdrawal;
         ++_nbWithdrawals;

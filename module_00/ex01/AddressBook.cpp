@@ -17,7 +17,7 @@ void AddressBook::add(const Contact& contact) {
                   << "existing contact or anything else to abort the current operation: ";
 
         std::string input;
-        getline(std::cin, input);
+        std::getline(std::cin, input);
 
         if (isInteger(input)) {
             size_t index = strtol(input.c_str(), NULL, 10);
@@ -56,7 +56,7 @@ void AddressBook::search(std::string& input) const {
         if (isInteger(input)) {
             size_t index = strtol(input.c_str(), NULL, 10);
             if (1 <= index && index <= getSize()) {
-                const Contact &contact = getContact(index - 1);
+                const Contact& contact = getContact(index - 1);
                 if (!contact.isEmpty()) {
                     std::cout << contact << std::endl;
                     break;
@@ -66,7 +66,7 @@ void AddressBook::search(std::string& input) const {
             }
         }
         std::cout << "Invalid index, try again or enter 0 to abort the current operation: ";
-        getline(std::cin, input);
+        std::getline(std::cin, input);
     }
 }
 

@@ -98,47 +98,47 @@ std::istream& operator>>(std::istream& is, Contact& contact) {
     std::string input;
 
     std::cout << "Enter first name: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setFirstName(input);
 
     std::cout << "Enter last name: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setLastName(input);
 
     std::cout << "Enter nickname: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setNickname(input);
 
     std::cout << "Enter login: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setLogin(input);
 
     std::cout << "Enter postal address: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setPostalAddress(input);
 
     std::cout << "Enter email address: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setEmailAddress(input);
 
     std::cout << "Enter phone number: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setPhoneNumber(input);
 
     std::cout << "Enter birthday date: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setBirthdayDate(input);
 
     std::cout << "Enter favorite meal: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setFavoriteMeal(input);
 
     std::cout << "Enter underwear color: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setUnderwearColor(input);
 
     std::cout << "Enter darkest secret: ";
-    getline(is, input);
+    std::getline(is, input);
     contact.setDarkestSecret(input);
 
     return is;
