@@ -22,7 +22,7 @@ class Account {
     static int getTotalAmount();
     static int getNbDeposits();
     static int getNbWithdrawals();
-    static int getNbCheckAmountCalls();
+    static int getNbAmountChecks();
     static void displayAccountsInfos();
 
     explicit Account(int initial_deposit = 0);
@@ -38,7 +38,7 @@ class Account {
     static int _totalAmount;
     static int _totalNbDeposits;
     static int _totalNbWithdrawals;
-    static int _totalCheckAmountCalls;
+    static int _totalNbAmountChecks;
 
     static void _displayTimestamp();
 

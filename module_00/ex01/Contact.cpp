@@ -90,7 +90,7 @@ void Contact::setDarkestSecret(const std::string& darkest_secret) {
     _darkestSecret = darkest_secret;
 }
 
-bool Contact::isEmpty() const {
+bool Contact::empty() const {
     return _firstName.empty() && _lastName.empty() && _nickname.empty();
 }
 

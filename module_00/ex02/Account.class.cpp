@@ -19,8 +19,8 @@ int Account::getNbWithdrawals() {
     return _totalNbWithdrawals;
 }
 
-int Account::getNbCheckAmountCalls() {
-    return _totalCheckAmountCalls;
+int Account::getNbAmountChecks() {
+    return _totalNbAmountChecks;
 }
 
 void Account::displayAccountsInfos() {
@@ -33,10 +33,10 @@ void Account::displayAccountsInfos() {
 }
 
 Account::Account(int initial_deposit)
-    : _accountIndex(_nbAccounts)
-    , _amount(initial_deposit)
-    , _nbDeposits(0)
-    , _nbWithdrawals(0) {
+        : _accountIndex(_nbAccounts)
+        , _amount(initial_deposit)
+        , _nbDeposits(0)
+        , _nbWithdrawals(0) {
     ++_nbAccounts;
     _totalAmount += _amount;
 
@@ -101,7 +101,7 @@ bool Account::makeWithdrawal(int withdrawal) {
 }
 
 int Account::checkAmount() const {
-    ++_totalCheckAmountCalls;
+    ++_totalNbAmountChecks;
     return _amount;
 }
 
@@ -126,4 +126,4 @@ int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
-int Account::_totalCheckAmountCalls = 0;
+int Account::_totalNbAmountChecks = 0;

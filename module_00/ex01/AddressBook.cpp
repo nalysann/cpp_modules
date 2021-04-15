@@ -6,8 +6,8 @@
 #include "utils.hpp"
 
 AddressBook::AddressBook()
-    : _size(0)
-    , _sizeNonEmpty(0)
+        : _size(0)
+        , _sizeNonEmpty(0)
 {}
 
 void AddressBook::add(const Contact& contact) {
@@ -22,17 +22,17 @@ void AddressBook::add(const Contact& contact) {
         if (isInteger(input)) {
             size_t index = strtol(input.c_str(), NULL, 10);
             if (1 <= index && index <= _MAX_SIZE) {
-                if (!_contacts[index - 1].isEmpty()) {
+                if (!_contacts[index - 1].empty()) {
                     --_sizeNonEmpty;
                 }
-                if (!contact.isEmpty()) {
+                if (!contact.empty()) {
                     ++_sizeNonEmpty;
                 }
                 _contacts[index - 1] = contact;
             }
         }
     } else {
-        if (!contact.isEmpty()) {
+        if (!contact.empty()) {
             ++_sizeNonEmpty;
         }
         _contacts[_size++] = contact;
@@ -55,9 +55,9 @@ void AddressBook::search(std::string& input) const {
     while (true) {
         if (isInteger(input)) {
             size_t index = strtol(input.c_str(), NULL, 10);
-            if (1 <= index && index <= getSize()) {
-                const Contact& contact = getContact(index - 1);
-                if (!contact.isEmpty()) {
+            if (1 <= index && index <= _size) {
+                const Contact& contact = _contacts[index - 1];
+                if (!contact.empty()) {
                     std::cout << contact << std::endl;
                     break;
                 }
@@ -75,7 +75,7 @@ std::ostream& operator<<(std::ostream& os, const AddressBook& address_book) {
         printHeader(os);
         for (size_t i = 0; i < address_book.getSize(); ++i) {
             const Contact& contact = address_book.getContact(i);
-            if (!contact.isEmpty()) {
+            if (!contact.empty()) {
                 printLine(os, i + 1, contact);
             }
         }

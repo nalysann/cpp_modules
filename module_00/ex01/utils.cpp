@@ -1,7 +1,7 @@
 #include <cctype>
 #include <cstdlib>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 #include <string>
 
 #include "AddressBook.hpp"
@@ -15,7 +15,7 @@ bool isInteger(const std::string& s) {
     char* endptr;
     strtol(s.c_str(), &endptr, 10);
 
-    return (*endptr == '\0');
+    return *endptr == '\0';
 }
 
 static void printField(std::ostream& os, size_t n) {
@@ -25,11 +25,12 @@ static void printField(std::ostream& os, size_t n) {
 }
 
 static void printField(std::ostream& os, const std::string& s, bool is_last) {
-    if (static_cast<int>(s.size()) <= AddressBook::COLUMN_WIDTH) {
+    if (s.size() <= AddressBook::COLUMN_WIDTH) {
         os << std::setw(AddressBook::COLUMN_WIDTH) << s;
     } else {
-        os << std::setw(AddressBook::COLUMN_WIDTH - 1) << s << '.';
+        os << s.substr(0, AddressBook::COLUMN_WIDTH - 1) << '.';
     }
+
     if (!is_last) {
         os << AddressBook::COLUMN_SEP;
     } else {

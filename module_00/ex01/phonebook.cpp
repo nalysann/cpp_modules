@@ -19,7 +19,7 @@ int main() {
             if (address_book.getSizeNonEmpty() > 0) {
                 std::string input;
                 std::cout << "Enter the index of the desired contact "
-                          << "or 0 to abort the current operation: ";
+                             "or 0 to abort the current operation: ";
                 std::getline(std::cin, input);
                 address_book.search(input);
             }

@@ -15,7 +15,7 @@ class AddressBook {
     size_t getSizeNonEmpty() const;
     void search(std::string& input) const;
 
-    static const int COLUMN_WIDTH = 10;
+    static const size_t COLUMN_WIDTH = 10;
     static const char COLUMN_SEP = '|';
 
   private:

@@ -30,7 +30,7 @@ class Contact {
     void setUnderwearColor(const std::string& underwear_color);
     void setDarkestSecret(const std::string& darkest_secret);
 
-    bool isEmpty() const;
+    bool empty() const;
 
   private:
     std::string _firstName;
