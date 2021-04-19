@@ -5,8 +5,8 @@
 #include "Weapon.hpp"
 
 HumanB::HumanB(const std::string& name)
-    : _name(name)
-    , _weapon(NULL) {}
+        : _name(name)
+        , _weapon(NULL) {}
 
 void HumanB::setWeapon(const Weapon& weapon) {
     _weapon = &weapon;

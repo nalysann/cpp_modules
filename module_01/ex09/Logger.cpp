@@ -7,7 +7,7 @@
 #include "Logger.hpp"
 
 Logger::Logger(const std::string& filename)
-    : _filename(filename) {}
+        : _filename(filename) {}
 
 void Logger::log(const std::string& dest,
                  const std::string& message) const {
@@ -23,8 +23,7 @@ void Logger::log(const std::string& dest,
 
     for (size_t i = 0; i < _NUM_FUNCTIONS; ++i) {
         if (dest == destinations[i]) {
-            (this->*functions[i])(message);
-            return;
+            return (this->*functions[i])(message);
         }
     }
 
@@ -52,7 +51,7 @@ void Logger::_logToConsole(const std::string& message) const {
 void Logger::_logToFile(const std::string& message) const {
     std::ofstream ofs(_filename.c_str(), std::ios::app);
 
-    if (ofs.fail()) {
+    if (!ofs) {
         std::cout << "Error: " << _filename
                   << ": File couldn't be opened" << std::endl;
         return;

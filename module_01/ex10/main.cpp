@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <sys/stat.h>
 
 void readFromConsole() {
     std::string input;
@@ -11,11 +12,25 @@ void readFromConsole() {
 }
 
 void readFromFile(const std::string& filename) {
+    struct stat st;
+
+    if (stat(filename.c_str(), &st) == 0) {
+        if (S_ISDIR(st.st_mode)) {
+            std::cout << "cato9tails: " << filename
+                      << ": Is a directory" << std::endl;
+            return;
+        }
+    } else {
+        std::cout << "cato9tails: " << filename
+                  << ": No such file or directory" << std::endl;
+        return;
+    }
+
     std::ifstream ifs(filename.c_str());
 
-    if (ifs.fail()) {
+    if (!ifs) {
         std::cout << "cato9tails: " << filename
-                  << ": Can't open file" << std::endl;
+                  << ": Permission denied" << std::endl;
         return;
     }
 

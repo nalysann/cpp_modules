@@ -7,13 +7,13 @@
 
 class ZombieEvent {
   public:
-    explicit ZombieEvent(const std::string& type = "sniffer");
+    explicit ZombieEvent(const std::string& zombie_type = "sniffer");
 
-    void setZombieType(const std::string& type);
+    void setZombieType(const std::string& zombie_type);
     Zombie* newZombie(const std::string& name) const;
 
   private:
-    std::string _zombieType;
+    std::string _zombie_type;
 };
 
 #endif

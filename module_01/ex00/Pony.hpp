@@ -5,10 +5,10 @@
 
 class Pony {
   public:
+    static void printPonyPopulation();
+
     explicit Pony(const std::string& name);
     ~Pony();
-
-    static void printPonyPopulation();
 
     void makeMagic() const;
 

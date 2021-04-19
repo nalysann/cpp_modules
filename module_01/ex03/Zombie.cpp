@@ -4,16 +4,17 @@
 #include <iostream>
 #include <string>
 
-std::string Zombie::_getRandomName(size_t size) {
-    std::string name(size, '\0');
+std::string Zombie::_getRandomName(size_t length) {
+    std::string name;
+    name.reserve(length);
 
-    const std::string alphanum(
+    static const std::string alphanum(
             "0123456789"
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "abcdefghijklmnopqrstuvwxyz");
 
-    for (size_t i = 0; i < size; ++i) {
-        name[i] = alphanum[rand() % (alphanum.size() - 1)];
+    for (size_t i = 0; i < length; ++i) {
+        name.push_back(alphanum[rand() % alphanum.size()]);
     }
 
     return name;

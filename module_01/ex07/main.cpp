@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     if (argc != 4) {
         std::cout << "usage: ./replace filename s1 s2" << std::endl
                   << "    filename - non-empty string, specifying the path to the existing file" << std::endl
                   << "    s1 - non-empty string, which will be replaced in <filename>" << std::endl
                   << "    s2 - non-empty string, to which <s1> will be replaced in <filename>" << std::endl
                   << "As a result, a file <filename.replace> will be created, with "
-                  << "each occurrence of <s1> replaced to <s2>." << std::endl;
+                     "each occurrence of <s1> replaced to <s2>." << std::endl;
         return 1;
     } else {
         const std::string filename(argv[1]);
@@ -18,19 +18,19 @@ int main(int argc, char *argv[]) {
         const std::string s2(argv[3]);
 
         if (filename.empty() || s1.empty() || s2.empty()) {
-            std::cout << "replace: " << "Arguments must be non-empty strings" << std::endl;
+            std::cout << "replace: Arguments must be non-empty strings" << std::endl;
             return 1;
         }
 
         std::ifstream ifs(filename.c_str());
-        if (ifs.fail()) {
+        if (!ifs) {
             std::cout << "replace: " << filename
                       << ": File couldn't be opened" << std::endl;
             return 1;
         }
 
         std::ofstream ofs(new_filename.c_str());
-        if (ofs.fail()) {
+        if (!ofs) {
             std::cout << "replace: " << new_filename
                       << ": File couldn't be created" << std::endl;
             return 1;

@@ -4,7 +4,7 @@
 #include "Human.hpp"
 
 Human::Human(const std::string &name)
-    : _name(name) {}
+        : _name(name) {}
 
 void Human::action (const std::string& action_name,
                     const std::string& target) const {
@@ -22,8 +22,7 @@ void Human::action (const std::string& action_name,
 
     for (size_t i = 0; i < _NUM_ACTIONS; ++i) {
         if (action_name == actions[i]) {
-            (this->*functions[i])(target);
-            return;
+            return (this->*functions[i])(target);
         }
     }
 

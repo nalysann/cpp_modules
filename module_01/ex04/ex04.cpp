@@ -6,7 +6,6 @@ int main() {
     std::string* s_ptr = &s;
     std::string& s_ref = s;
 
-    std::cout << "Direct access: " << s << std::endl
-              << "Access via pointer: " << *s_ptr << std::endl
-              << "Access via reference: " << s_ref << std::endl;
+    std::cout << "Access via the pointer: " << *s_ptr << std::endl
+              << "Access via the reference: " << s_ref << std::endl;
 }

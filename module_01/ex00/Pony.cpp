@@ -3,8 +3,8 @@
 
 #include "Pony.hpp"
 
-Pony::Pony(const std::string &name)
-    : _name(name) {
+Pony::Pony(const std::string& name)
+        : _name(name) {
     ++_ponyPopulation;
     std::cout << _name << " has joined the server." << std::endl;
 }
