@@ -21,12 +21,13 @@ int main() {
     std::cout << (a <= b) << std::endl;
     std::cout << (a == b) << std::endl;
     std::cout << (a != b) << std::endl;
+    std::cout << std::noboolalpha;
 
     std::cout << a + b << std::endl;
     std::cout << a - b << std::endl;
     std::cout << a * b << std::endl;
     std::cout << a / b << std::endl;
 
-    std::cout << Fixed::max(a, b) << std::endl;
-    std::cout << Fixed::min(a, b) << std::endl;
+    std::cout << max(a, b) << std::endl;
+    std::cout << min(a, b) << std::endl;
 }

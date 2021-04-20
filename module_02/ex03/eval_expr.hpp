@@ -1,17 +1,17 @@
-#ifndef UTILS_HPP
-#define UTILS_HPP
+#ifndef EVAL_EXPR_HPP
+#define EVAL_EXPR_HPP
 
-#include <cctype>
 #include <string>
 
-std::string remove_spaces(const std::string& s) {
-    std::string res;
-    for (size_t i = 0; i < s.size(); ++i) {
-        if (!isspace(s[i])) {
-            res.push_back(s[i]);
-        }
-    }
-    return res;
-}
+#include "Fixed.hpp"
+
+void skip_spaces();
+void terminate(const std::string& message);
+
+Fixed eval();
+Fixed eval_term();
+Fixed eval_one();
+Fixed eval_number();
+Fixed eval_parentheses();
 
 #endif

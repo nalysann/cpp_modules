@@ -6,21 +6,20 @@
 class Fixed {
   public:
     Fixed();
-    ~Fixed();
     Fixed(const Fixed& other);
+    explicit Fixed(int number);
+    explicit Fixed(float number);
     Fixed& operator=(const Fixed& other);
-
-    explicit Fixed(const int number);
-    explicit Fixed(const float number);
+    ~Fixed();
 
     int getRawBits() const;
-    void setRawBits(const int raw);
+    void setRawBits(int rawBits);
 
     int toInt() const;
     float toFloat() const;
 
   private:
-    static const int _FRAC_SIZE = 8;
+    static const int FRAC_SIZE = 8;
 
     int _rawBits;
 };

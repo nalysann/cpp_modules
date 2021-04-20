@@ -6,15 +6,14 @@
 class Fixed {
   public:
     Fixed();
-    ~Fixed();
     Fixed(const Fixed& other);
+    explicit Fixed(int number);
+    explicit Fixed(float number);
     Fixed& operator=(const Fixed& other);
-
-    explicit Fixed(const int number);
-    explicit Fixed(const float number);
+    ~Fixed();
 
     int getRawBits() const;
-    void setRawBits(const int raw);
+    void setRawBits(int rawBits);
 
     int toInt() const;
     float toFloat() const;
@@ -36,17 +35,17 @@ class Fixed {
     Fixed& operator--();
     Fixed operator--(int);
 
-    static Fixed& min(Fixed& a, Fixed& b);
-    static const Fixed& min(const Fixed& a, const Fixed& b);
-    static Fixed& max(Fixed& a, Fixed& b);
-    static const Fixed& max(const Fixed& a, const Fixed& b);
-
   private:
-    static const int _FRAC_SIZE = 8;
+    static const int FRAC_SIZE = 8;
 
     int _rawBits;
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
+
+Fixed& min(Fixed& a, Fixed& b);
+const Fixed& min(const Fixed& a, const Fixed& b);
+Fixed& max(Fixed& a, Fixed& b);
+const Fixed& max(const Fixed& a, const Fixed& b);
 
 #endif

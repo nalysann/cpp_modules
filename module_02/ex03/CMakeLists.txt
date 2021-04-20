@@ -6,8 +6,7 @@ set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror")
 
 add_executable(eval_expr
+        eval_expr.hpp
         Fixed.hpp
-        utils.hpp
-        Fixed.cpp
-        main.cpp
-        utils.cpp)
+        eval_expr.cpp
+        Fixed.cpp)
