@@ -12,17 +12,17 @@ Logger::Logger(const std::string& filename)
 
 void Logger::log(const std::string& dest,
                  const std::string& message) const {
-    static const std::string destinations[_NUM_FUNCTIONS] = {
+    static const std::string destinations[NUM_FUNCTIONS] = {
             "console",
             "file",
     };
 
-    static const Logger::logFunction functions[_NUM_FUNCTIONS] = {
+    static const Logger::logFunction functions[NUM_FUNCTIONS] = {
             &Logger::_logToConsole,
             &Logger::_logToFile,
     };
 
-    for (size_t i = 0; i < _NUM_FUNCTIONS; ++i) {
+    for (size_t i = 0; i < NUM_FUNCTIONS; ++i) {
         if (dest == destinations[i]) {
             return (this->*functions[i])(message);
         }

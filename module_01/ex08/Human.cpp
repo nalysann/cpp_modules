@@ -8,19 +8,19 @@ Human::Human(const std::string &name)
 
 void Human::action (const std::string& action_name,
                     const std::string& target) const {
-    static const std::string actions[_NUM_ACTIONS] = {
+    static const std::string actions[NUM_ACTIONS] = {
             "melee",
             "ranged",
             "shout",
     };
 
-    static const Human::attackFunction functions[_NUM_ACTIONS] = {
+    static const Human::attackFunction functions[NUM_ACTIONS] = {
             &Human::_meleeAttack,
             &Human::_rangedAttack,
             &Human::_intimidatingShout,
     };
 
-    for (size_t i = 0; i < _NUM_ACTIONS; ++i) {
+    for (size_t i = 0; i < NUM_ACTIONS; ++i) {
         if (action_name == actions[i]) {
             return (this->*functions[i])(target);
         }

@@ -7,13 +7,12 @@
 
 AddressBook::AddressBook()
         : _size(0)
-        , _sizeNonEmpty(0)
-{}
+        , _sizeNonEmpty(0) {}
 
 void AddressBook::add(const Contact& contact) {
-    if (_size >= _MAX_SIZE) {
+    if (_size >= MAX_SIZE) {
         std::cout << "Address book is full, enter a number from 1 to "
-                  << _MAX_SIZE << " to overwrite the" << std::endl
+                  << MAX_SIZE << " to overwrite the" << std::endl
                   << "existing contact or anything else to abort the current operation: ";
 
         std::string input;
@@ -21,7 +20,7 @@ void AddressBook::add(const Contact& contact) {
 
         if (isInteger(input)) {
             size_t index = strtol(input.c_str(), NULL, 10);
-            if (1 <= index && index <= _MAX_SIZE) {
+            if (1 <= index && index <= MAX_SIZE) {
                 if (!_contacts[index - 1].empty()) {
                     --_sizeNonEmpty;
                 }

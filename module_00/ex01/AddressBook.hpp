@@ -19,9 +19,9 @@ class AddressBook {
     static const char COLUMN_SEP = '|';
 
   private:
-    static const size_t _MAX_SIZE = 8;
+    static const size_t MAX_SIZE = 8;
 
-    Contact _contacts[_MAX_SIZE];
+    Contact _contacts[MAX_SIZE];
     size_t _size;
     size_t _sizeNonEmpty;
 };

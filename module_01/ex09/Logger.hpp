@@ -16,7 +16,7 @@ class Logger {
     static std::string _getTimestamp();
     static std::string _makeLogEntry(const std::string& message);
 
-    static const size_t _NUM_FUNCTIONS = 2;
+    static const size_t NUM_FUNCTIONS = 2;
 
     void _logToConsole(const std::string& message) const;
     void _logToFile(const std::string& message) const;

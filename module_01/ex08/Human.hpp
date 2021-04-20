@@ -17,7 +17,7 @@ class Human {
     void _rangedAttack(const std::string& target) const;
     void _intimidatingShout(const std::string& target) const;
 
-    static const size_t _NUM_ACTIONS = 3;
+    static const size_t NUM_ACTIONS = 3;
 
     const std::string _name;
 };
