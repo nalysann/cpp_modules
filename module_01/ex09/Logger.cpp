@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <sys/stat.h>
 
 #include "Logger.hpp"
 
@@ -49,11 +50,19 @@ void Logger::_logToConsole(const std::string& message) const {
 }
 
 void Logger::_logToFile(const std::string& message) const {
+    struct stat st;
+
+    if (stat(_filename.c_str(), &st) == 0 && S_ISDIR(st.st_mode)) {
+        std::cerr << "error: " << _filename
+                  << ": Is a directory" << std::endl;
+        return;
+    }
+
     std::ofstream ofs(_filename.c_str(), std::ios::app);
 
     if (!ofs) {
-        std::cout << "Error: " << _filename
-                  << ": File couldn't be opened" << std::endl;
+        std::cerr << "error: " << _filename
+                  << ": Permission denied" << std::endl;
         return;
     }
 

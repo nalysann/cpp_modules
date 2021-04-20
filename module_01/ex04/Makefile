@@ -1,6 +1,6 @@
 BIN := brain
 
-SRC := ex04.cpp
+SRC := main.cpp
 
 OBJ := $(SRC:.cpp=.o)
 DEP := $(SRC:.cpp=.d)

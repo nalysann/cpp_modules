@@ -6,4 +6,4 @@ set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror")
 
 add_executable(brain
-        ex04.cpp)
+        main.cpp)

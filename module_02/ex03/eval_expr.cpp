@@ -1,6 +1,4 @@
-#include <cctype>
 #include <iostream>
-#include <sstream>
 
 #include "Fixed.hpp"
 #include "utils.hpp"
@@ -262,21 +260,100 @@ Fixed eval(const std::string& expr, size_t pos = 0) {
     return result;
 }
 
+std::string expr;
+size_t pos = 0;
+
+Fixed eval_parentheses() {
+    ++pos;
+    Fixed res = eval();
+
+    if (expr[pos] != ')') {
+        std::cerr << "eval_expr: "
+    }
+    *expression = *expression + 1;
+    *expression = skip_space(*expression);
+    return result;
+}
+
+Fixed	eval_number() {
+    bool	isfloat = false;
+    int		i;
+    float	f;
+
+    if (is_sign(*n_end))
+        n_end++;
+    n_end = advance_digit(n_end);
+    if (*n_end == '.') {
+        isfloat = true;
+        n_end++;
+        n_end = advance_digit(n_end);
+    }
+    std::string			str(*expression, n_end - *expression);
+    *expression = n_end;
+    std::istringstream	ss(str);
+    if (isfloat) {
+        ss >> f;
+        return Fixed(f);
+    } else {
+        ss >> i;
+        return Fixed(i);
+    }
+}
+
+Fixed eval_term() {
+    if (expr[pos] == '(') {
+        return eval_parentheses();
+    } else {
+        return eval_number();
+    }
+}
+
+//else {
+//std::cout << "eval_expr: Invalid expression" << std::endl;
+//exit(1);
+//}
+
+Fixed eval_mul_div() {
+    Fixed res = eval_term();
+
+    while (expr[pos] == '*' || expr[pos] == '/') {
+        ++pos;
+        Fixed rhs = parse_term();
+        if (expr[pos] == '*') {
+            res *= rhs;
+        } else {
+            res /= rhs;
+        }
+    }
+
+    return res;
+}
+
+Fixed eval() {
+    Fixed n = eval_mul_div();
+}
+
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         std::cout << "usage: ./eval_expr expression" << std::endl
                   << "    - expression - mathematical expression to evaluate" << std::endl
-                  << "Supported operations: +, -, *, /." << std::endl;
+                  << "Supported operations: +, -, *, /" << std::endl;
         return 1;
     }
 
-    const std::string expr(argv[1]);
+    expr = remove_spaces(argv[1]);
 
     if (expr.empty()) {
         std::cout << "eval_expr: Empty expression" << std::endl;
+        return 1;
     }
 
-    std::cout << eval(argv[1]) << std::endl;
+    // expr ::= term {op term}
+    // term ::= expr | "(" expr ")" | number
+    // op ::= "+" | "-" | "*" | "/"
+    // number ::= [1-9]{0-9} | [0-9].
+
+    std::cout << eval(expr) << std::endl;
 }
 
 //$> clang++ -Wall -Wextra -Werror -o eval_expr Fixed.class.cpp {your files}
