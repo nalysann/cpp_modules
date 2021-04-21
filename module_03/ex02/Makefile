@@ -1,20 +1,22 @@
-BIN = test_fixed
+BIN := test_clap_trap
 
-SRC = Fixed.cpp \
-      main.cpp
+SRC := ClapTrap.cpp \
+       FragTrap.cpp \
+       main.cpp \
+       ScavTrap.cpp
 
-OBJ = $(SRC:.cpp=.o)
-DEP = $(SRC:.cpp=.d)
+OBJ := $(SRC:.cpp=.o)
+DEP := $(SRC:.cpp=.d)
 
-INC_DIRS = .
+INC_DIRS := .
 
-CXX = clang++
+CXX := clang++
 
-CXXFLAGS += -c \
-            -std=c++98 \
+CXXFLAGS += -std=c++98 \
             $(addprefix -I , $(INC_DIRS)) \
             -Wall -Wextra -Werror \
-            -MMD
+            -MMD \
+            -O2 -march=native -pipe
 
 all: $(BIN)
 
@@ -22,9 +24,9 @@ $(BIN): $(OBJ)
 	$(CXX) $^ -o $@
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-include $(wildcard $(DEP))
+-include $(DEP)
 
 clean:
 	rm -f $(BIN) $(OBJ) $(DEP)
