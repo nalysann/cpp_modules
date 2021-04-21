@@ -5,6 +5,8 @@
 
 class FragTrap {
   public:
+    typedef void (FragTrap::*attack)(const std::string&) const;
+
     explicit FragTrap(const std::string& name);
     FragTrap(const FragTrap& other);
     FragTrap& operator=(const FragTrap& other);
@@ -18,17 +20,15 @@ class FragTrap {
     void vaulthunter_dot_exe(const std::string& target);
 
   private:
-    static const unsigned _maxHp = 100;
-    static const unsigned _maxEp = 100;
-    static const unsigned _meleeDamage = 30;
-    static const unsigned _rangeDamage = 20;
-    static const unsigned _damageReduction = 5;
-    static const unsigned _vhExeEp = 25;
-
     unsigned _hp;
+    unsigned _maxHp;
     unsigned _ep;
+    unsigned _maxEp;
     unsigned _level;
     std::string _name;
+    unsigned _meleeDamage;
+    unsigned _rangeDamage;
+    unsigned _damageReduction;
 };
 
 #endif

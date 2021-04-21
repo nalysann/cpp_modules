@@ -7,6 +7,10 @@ int main() {
     srand(time(NULL));
 
     FragTrap frag("Claptrap");
+    FragTrap ffrag("Pepetrap");
+    FragTrap fffrag(frag);
+
+    fffrag = ffrag;
 
     frag.vaulthunter_dot_exe("Apollo");
     frag.takeDamage(42);
