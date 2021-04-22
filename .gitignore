@@ -30,3 +30,14 @@ replace
 test_human
 test_logger
 cato9tails
+
+# module 02
+test_fixed
+eval_expr
+
+# module 03
+test_frag_trap
+test_scav_trap
+test_clap_trap
+test_ninja_trap
+test_super_trap
