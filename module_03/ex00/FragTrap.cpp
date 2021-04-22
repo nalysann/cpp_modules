@@ -125,7 +125,7 @@ void FragTrap::vaulthunter_dot_exe(const std::string& target) {
             " turns invisible and starts lurking...",
     };
 
-    static const FragTrap::attack package_attacks[] = {
+    static const FragTrap::_attack package_attacks[] = {
             &FragTrap::rangedAttack,
             &FragTrap::rangedAttack,
             &FragTrap::meleeAttack,
