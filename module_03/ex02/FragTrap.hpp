@@ -7,8 +7,6 @@
 
 class FragTrap : public ClapTrap {
   public:
-    typedef void (FragTrap::*attack)(const std::string&) const;
-
     explicit FragTrap(const std::string& name);
     FragTrap(const FragTrap& other);
     FragTrap& operator=(const FragTrap& other);

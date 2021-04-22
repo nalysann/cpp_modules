@@ -80,6 +80,8 @@ int main() {
     std::cout << std::endl;
     
     {
+        srand(time(NULL));
+
         ClapTrap clap("Claptrap");
         FragTrap frag("Fragtrap");
         ScavTrap scav("Scavtrap");

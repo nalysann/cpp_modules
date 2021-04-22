@@ -5,6 +5,8 @@
 
 class ClapTrap {
   public:
+    typedef void (ClapTrap::*attack)(const std::string&) const;
+
     explicit ClapTrap(const std::string& name);
     ClapTrap(const ClapTrap& other);
     ClapTrap& operator=(const ClapTrap& other);
