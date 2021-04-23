@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
 #include "AddressBook.hpp"
 #include "Contact.hpp"

@@ -2,6 +2,7 @@
 #define ADDRESSBOOK_HPP
 
 #include <iostream>
+#include <string>
 
 #include "Contact.hpp"
 
