@@ -5,14 +5,14 @@
 
 class Logger {
   public:
-    typedef void (Logger::*logFunction)(const std::string& message) const;
-
     explicit Logger(const std::string& filename);
 
     void log(const std::string& dest,
              const std::string& message) const;
 
   private:
+    typedef void (Logger::*_logFunction)(const std::string& message) const;
+
     static std::string _getTimestamp();
     static std::string _makeLogEntry(const std::string& message);
 

@@ -17,7 +17,7 @@ void Logger::log(const std::string& dest,
             "file",
     };
 
-    static const Logger::logFunction functions[NUM_FUNCTIONS] = {
+    static const Logger::_logFunction functions[NUM_FUNCTIONS] = {
             &Logger::_logToConsole,
             &Logger::_logToFile,
     };
@@ -33,7 +33,7 @@ void Logger::log(const std::string& dest,
 
 std::string Logger::_getTimestamp() {
     std::ostringstream os;
-    time_t now = time(0);
+    time_t now = time(NULL);
     tm local = *localtime(&now);
     char buf[42];
     strftime(buf, sizeof(buf), "%Y%m%d_%H%M%S", &local);

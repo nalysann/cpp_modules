@@ -14,7 +14,7 @@ void Human::action (const std::string& action_name,
             "shout",
     };
 
-    static const Human::attackFunction functions[NUM_ACTIONS] = {
+    static const Human::_attack attacks[NUM_ACTIONS] = {
             &Human::_meleeAttack,
             &Human::_rangedAttack,
             &Human::_intimidatingShout,
@@ -22,7 +22,7 @@ void Human::action (const std::string& action_name,
 
     for (size_t i = 0; i < NUM_ACTIONS; ++i) {
         if (action_name == actions[i]) {
-            return (this->*functions[i])(target);
+            return (this->*attacks[i])(target);
         }
     }
 

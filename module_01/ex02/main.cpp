@@ -1,8 +1,13 @@
+#include <cstdlib>
+#include <ctime>
+
 #include "utils.hpp"
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
 int main() {
+    srand(time(NULL));
+
     ZombieEvent event1("jumper");
     ZombieEvent event2;
 
