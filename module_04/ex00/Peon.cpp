@@ -2,6 +2,7 @@
 #include <string>
 
 #include "Peon.hpp"
+#include "Victim.hpp"
 
 Peon::Peon(const std::string& name)
         : Victim(name) {

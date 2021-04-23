@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+#include "Victim.hpp"
 #include "Warrior.hpp"
 
 Warrior::Warrior(const std::string& name)

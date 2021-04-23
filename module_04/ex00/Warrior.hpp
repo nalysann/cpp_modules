@@ -11,9 +11,9 @@ class Warrior : public Victim {
     explicit Warrior(const std::string& name);
     Warrior(const Warrior& other);
     Warrior& operator=(const Warrior& other);
-    virtual ~Warrior();
+    ~Warrior();
 
-    virtual void getPolymorphed() const;
+    void getPolymorphed() const;
 };
 
 #endif
