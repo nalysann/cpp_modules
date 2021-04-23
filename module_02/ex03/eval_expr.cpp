@@ -2,8 +2,8 @@
 #include <iostream>
 #include <sstream>
 
-#include "Fixed.hpp"
 #include "eval_expr.hpp"
+#include "Fixed.hpp"
 
 std::string expr;
 size_t pos = 0;
