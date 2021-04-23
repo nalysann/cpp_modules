@@ -7,7 +7,7 @@
 
 Character::Character(const std::string& name)
         : _name(name)
-        , _ap(_max_ap)
+        , _ap(MAX_AP)
         , _weapon(NULL) {}
 
 Character::Character(const Character& other)
@@ -38,10 +38,10 @@ AWeapon* Character::getWeapon() const {
 }
 
 void Character::recoverAP() {
-    if (_max_ap - _ap < _recover_ap) {
-        _ap = _max_ap;
+    if (MAX_AP - _ap < REC_AP) {
+        _ap = MAX_AP;
     } else {
-        _ap += _recover_ap;
+        _ap += REC_AP;
     }
 }
 
@@ -72,6 +72,3 @@ std::ostream& operator<<(std::ostream& os, const Character& character) {
                                         : "is unarmed")
               << std::endl;
 }
-
-const int Character::_max_ap = 40;
-const int Character::_recover_ap = 10;

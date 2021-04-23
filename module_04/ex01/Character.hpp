@@ -24,8 +24,8 @@ class Character {
     void attack(Enemy* enemy);
 
   private:
-    static const int _max_ap;
-    static const int _recover_ap;
+    static const int MAX_AP = 40;
+    static const int REC_AP = 10;
 
     std::string _name;
     int _ap;
