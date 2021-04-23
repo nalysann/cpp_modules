@@ -41,3 +41,10 @@ test_scav_trap
 test_clap_trap
 test_ninja_trap
 test_super_trap
+
+# module 04
+test_poly
+test_fallout
+test_warhammer
+test_materia
+test_mining
