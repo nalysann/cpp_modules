@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror")
 
-add_executable(test_forms
+add_executable(test_concrete_forms
         Bureaucrat.hpp
         Form.hpp
         PresidentialPardonForm.hpp

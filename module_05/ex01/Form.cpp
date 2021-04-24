@@ -48,7 +48,7 @@ int Form::getExecuteGrade() const {
 
 void Form::beSigned(const Bureaucrat& bureaucrat) {
     if (_is_signed) {
-        throw AlreadySignedException();
+        throw SignedException();
     } else if (bureaucrat.getGrade() > _sign_grade) {
         throw GradeTooLowException();
     }
@@ -57,8 +57,8 @@ void Form::beSigned(const Bureaucrat& bureaucrat) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {
-    return os << "Form " << form.getName()
-              << ", sign grade " << form.getSignGrade()
-              << ", execute grade " << form.getExecuteGrade()
-              << ", is " << (form.isSigned() ? "signed" : "not signed");
+    return os << form.getName()
+              << " (s.grade " << form.getSignGrade()
+              << ", ex.grade " << form.getExecuteGrade()
+              << ") (" << (form.isSigned() ? "Signed" : "Unsigned") << ")";
 }

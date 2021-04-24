@@ -34,4 +34,4 @@ $(BIN): $(OBJ)
 -include $(DEP)
 
 clean:
-	rm -f $(BIN) $(OBJ) $(DEP)
+	rm -f $(BIN) $(OBJ) $(DEP) *_shrubbery

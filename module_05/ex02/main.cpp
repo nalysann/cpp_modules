@@ -10,15 +10,18 @@ int main() {
     Bureaucrat cheems("Cheems", Bureaucrat::MIN_GRADE);
     Bureaucrat swole("Swole", Bureaucrat::MAX_GRADE);
 
-    std::cout << cheems << std::endl << swole << std::endl;
+    std::cout << cheems << std::endl;
+    std::cout << swole << std::endl;
 
     Form* ppf = new PresidentialPardonForm("Peppa");
     Form* rrf = new RobotomyRequestForm("Chad");
     Form* scf = new ShrubberyCreationForm("Pentagon");
     Form* not_signed = new RobotomyRequestForm("Jim");
-    Form* denied = new ShrubberyCreationForm("kek");
+    Form* denied = new ShrubberyCreationForm("USA");
 
-    std::cout << *ppf << std::endl << *rrf << std::endl << *scf << std::endl;
+    std::cout << *ppf << std::endl;
+    std::cout << *rrf << std::endl;
+    std::cout << *scf << std::endl;
 
     cheems.signForm(*ppf);
     cheems.signForm(*rrf);
@@ -27,9 +30,8 @@ int main() {
     swole.signForm(*rrf);
     swole.signForm(*scf);
 
-    std::cout << *ppf << std::endl << *rrf << std::endl << *scf << std::endl;
-
     std::cout << *not_signed << std::endl;
+
     cheems.executeForm(*not_signed);
     swole.executeForm(*not_signed);
 

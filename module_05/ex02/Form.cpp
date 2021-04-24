@@ -54,7 +54,7 @@ const std::string& Form::getTarget() const {
 
 void Form::beSigned(const Bureaucrat& bureaucrat) {
     if (_is_signed) {
-        throw AlreadySignedException();
+        throw SignedException();
     } else if (bureaucrat.getGrade() > _sign_grade) {
         throw GradeTooLowException();
     }
@@ -64,7 +64,7 @@ void Form::beSigned(const Bureaucrat& bureaucrat) {
 
 void Form::execute(const Bureaucrat& executor) const {
     if (!_is_signed) {
-        throw NotSignedException();
+        throw UnsignedException();
     } else if (executor.getGrade() > _execute_grade) {
         throw GradeTooLowException();
     }
@@ -73,8 +73,8 @@ void Form::execute(const Bureaucrat& executor) const {
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {
-    return os << "Form " << form.getName()
-              << ", sign grade " << form.getSignGrade()
-              << ", execute grade " << form.getExecuteGrade()
-              << ", is " << (form.isSigned() ? "signed" : "not signed");
+    return os << form.getName()
+              << " (s.grade " << form.getSignGrade()
+              << ", ex.grade " << form.getExecuteGrade()
+              << ") (" << (form.isSigned() ? "Signed" : "Unsigned") << ")";
 }

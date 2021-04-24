@@ -44,20 +44,20 @@ int main() {
         Form f("A1", 25, 17);
         Form g("A2", 10, 20);
 
-        std::cout << "sign form via Form::beSigned" << std::endl;
+        std::cout << b << std::endl;
+
+        std::cout << "sign the form via Form::beSigned" << std::endl;
         std::cout << f << std::endl;
         f.beSigned(b);
         std::cout << f << std::endl;
 
-        std::cout << "sign form via Bureaucrat::signForm" << std::endl;
+        std::cout << "sign the form via Bureaucrat::signForm" << std::endl;
         std::cout << g << std::endl;
         b.signForm(g);
-        std::cout << g << std::endl;
 
         std::cout << "try to sign the form that is already signed" << std::endl;
         std::cout << f << std::endl;
         b.signForm(f);
-        std::cout << f << std::endl;
     }
 
     {
@@ -65,10 +65,11 @@ int main() {
         Bureaucrat c("Chad", Bureaucrat::MAX_GRADE);
         Form f("A1", 11, 7);
 
-        std::cout << f << std::endl << b << std::endl;
-        b.signForm(f);
-        std::cout << f << std::endl << c << std::endl;
-        c.signForm(f);
+        std::cout << b << std::endl;
+        std::cout << c << std::endl;
         std::cout << f << std::endl;
+
+        b.signForm(f);
+        c.signForm(f);
     }
 }

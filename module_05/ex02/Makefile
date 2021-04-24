@@ -1,4 +1,4 @@
-BIN := test_forms
+BIN := test_concrete_forms
 
 SRC := Bureaucrat.cpp \
        Form.cpp \
@@ -31,4 +31,4 @@ $(BIN): $(OBJ)
 -include $(DEP)
 
 clean:
-	rm -f $(BIN) $(OBJ) $(DEP)
+	rm -f $(BIN) $(OBJ) $(DEP) *_shrubbery

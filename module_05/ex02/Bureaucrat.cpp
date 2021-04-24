@@ -53,12 +53,12 @@ void Bureaucrat::decrementGrade() {
 void Bureaucrat::signForm(Form& form) const {
     try {
         form.beSigned(*this);
-        std::cout << _name << " signs " << form.getName() << std::endl;
-    } catch (Form::AlreadySignedException&) {
-        std::cout << _name << " can't sign " << form.getName()
+        std::cout << *this << " signed " << form << std::endl;
+    } catch (Form::SignedException&) {
+        std::cout << *this << " can't sign " << form
                   << " because it's already signed" << std::endl;
     } catch (Form::GradeTooLowException&) {
-        std::cout << _name << " can't sign " << form.getName()
+        std::cout << *this << " can't sign " << form
                   << " because his grade is too low" << std::endl;
     }
 }
@@ -66,16 +66,16 @@ void Bureaucrat::signForm(Form& form) const {
 void Bureaucrat::executeForm(const Form& form) const {
     try {
         form.execute(*this);
-        std::cout << _name << " executes " << form.getName() << std::endl;
-    } catch (Form::NotSignedException&) {
-        std::cout << _name << " can't execute " << form.getName()
-                  << " because it's not signed" << std::endl;
+        std::cout << *this << " executed " << form << std::endl;
+    } catch (Form::UnsignedException&) {
+        std::cout << *this << " can't execute " << form
+                  << " because it's unsigned" << std::endl;
     } catch (Form::GradeTooLowException&) {
-        std::cout << _name << " can't execute " << form.getName()
+        std::cout << *this << " can't execute " << form
                   << " because his grade is too low" << std::endl;
     }
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
-    return os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+    return os << "Bureaucrat " << bureaucrat.getName() << " (grade " << bureaucrat.getGrade() << ")";
 }

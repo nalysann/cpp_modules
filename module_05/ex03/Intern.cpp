@@ -33,7 +33,7 @@ Form* Intern::makeForm(const std::string& name, const std::string& target) const
     for (size_t i = 0; i < NUM_FORMS; ++i) {
         if (name == form_names[i]) {
             Form* new_form = (this->*form_makers[i])(target);
-            std::cout << "Intern creates " << new_form->getName() << std::endl;
+            std::cout << "Intern created " << *new_form << std::endl;
             return new_form;
         }
     }
