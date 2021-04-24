@@ -17,6 +17,8 @@ int	main() {
         std::cout << "before decrementGrade(): " << b.getGrade() << std::endl;
         b.decrementGrade();
         std::cout << "after decrementGrade(): " << b.getGrade() << std::endl;
+
+        std::cout << b << std::endl;
     }
 
     {

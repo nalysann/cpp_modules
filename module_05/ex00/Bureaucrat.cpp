@@ -4,37 +4,23 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade)
-        : _name(name) {
-    if (grade < MAX_GRADE) {
+        : _name(name)
+        , _grade(grade) {
+    if (_grade < MAX_GRADE) {
         throw GradeTooHighException();
-    } else if (grade > MIN_GRADE) {
+    } else if (_grade > MIN_GRADE) {
         throw GradeTooLowException();
     }
-
-    _grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
-        : _name(other._name) {
-    if (other._grade < MAX_GRADE) {
+        : _name(other._name)
+        , _grade(other._grade) {
+    if (_grade < MAX_GRADE) {
         throw GradeTooHighException();
-    } else if (other._grade > MIN_GRADE) {
+    } else if (_grade > MIN_GRADE) {
         throw GradeTooLowException();
     }
-
-    _grade = other._grade;
-}
-
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
-    if (other._grade < MAX_GRADE) {
-        throw GradeTooHighException();
-    } else if (other._grade > MIN_GRADE) {
-        throw GradeTooLowException();
-    }
-
-    _grade = other._grade;
-
-    return *this;
 }
 
 Bureaucrat::~Bureaucrat() {}
@@ -64,6 +50,5 @@ void Bureaucrat::decrementGrade() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
-    return os << bureaucrat.getName() << ", bureaucrat grade "
-              << bureaucrat.getGrade() << std::endl;
+    return os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 }
