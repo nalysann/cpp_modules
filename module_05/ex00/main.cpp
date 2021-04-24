@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdexcept>
 
 #include "Bureaucrat.hpp"
 
@@ -24,13 +23,13 @@ int	main() {
     {
         try {
             Bureaucrat b("John", Bureaucrat::MAX_GRADE - 1);
-        } catch (std::exception&) {
+        } catch (Bureaucrat::GradeTooHighException&) {
             std::cout << "tried to create a bureaucrat with the grade too high" << std::endl;
         }
 
         try {
             Bureaucrat b("John", Bureaucrat::MIN_GRADE + 1);
-        } catch (std::exception&) {
+        } catch (Bureaucrat::GradeTooLowException&) {
             std::cout << "tried to create a bureaucrat with the grade too low" << std::endl;
         }
     }
@@ -39,14 +38,14 @@ int	main() {
         try {
             Bureaucrat b("John", Bureaucrat::MAX_GRADE);
             b.incrementGrade();
-        } catch (std::exception&) {
+        } catch (Bureaucrat::GradeTooHighException&) {
             std::cout << "tried to increment the grade over the max grade" << std::endl;
         }
 
         try {
             Bureaucrat b("John", Bureaucrat::MIN_GRADE);
             b.decrementGrade();
-        } catch (std::exception&) {
+        } catch (Bureaucrat::GradeTooLowException&) {
             std::cout << "tried to decrement the grade over the min grade" << std::endl;
         }
     }

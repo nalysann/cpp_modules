@@ -11,6 +11,7 @@ class Form {
   public:
     class GradeTooHighException : public std::exception {};
     class GradeTooLowException : public std::exception {};
+    class AlreadySignedException : public std::exception {};
 
     Form();
     Form(const std::string& name, int sign_grade, int execute_grade);

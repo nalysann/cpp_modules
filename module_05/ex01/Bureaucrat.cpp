@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdexcept>
 #include <string>
 
 #include "Bureaucrat.hpp"
@@ -52,17 +51,15 @@ void Bureaucrat::decrementGrade() {
 }
 
 void Bureaucrat::signForm(Form& form) const {
-    if (form.isSigned()) {
-        std::cout << _name << " cannot sign " << form.getName()
-                  << " because it's already signed" << std::endl;
-        return;
-    }
-
     try {
         form.beSigned(*this);
         std::cout << _name << " signs " << form.getName() << std::endl;
-    } catch (std::exception&) {
-        std::cout << _name << " cannot sign " << form.getName() << std::endl;
+    } catch (Form::AlreadySignedException&) {
+        std::cout << _name << " can't sign " << form.getName()
+                  << " because it's already signed" << std::endl;
+    } catch (Form::GradeTooLowException&) {
+        std::cout << _name << " can't sign " << form.getName()
+                  << " because his grade is too low" << std::endl;
     }
 }
 

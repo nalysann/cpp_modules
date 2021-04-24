@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdexcept>
 #include <string>
 
 #include "Bureaucrat.hpp"
@@ -48,7 +47,9 @@ int Form::getExecuteGrade() const {
 }
 
 void Form::beSigned(const Bureaucrat& bureaucrat) {
-    if (bureaucrat.getGrade() > _sign_grade) {
+    if (_is_signed) {
+        throw AlreadySignedException();
+    } else if (bureaucrat.getGrade() > _sign_grade) {
         throw GradeTooLowException();
     }
 

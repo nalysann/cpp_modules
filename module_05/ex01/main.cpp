@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdexcept>
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
@@ -17,25 +16,25 @@ int main() {
     {
         try {
             Form f("A1", Form::MAX_GRADE - 1, 42);
-        } catch (std::exception&) {
+        } catch (Form::GradeTooHighException&) {
             std::cout << "tried to create a form with the sign grade too high" << std::endl;
         }
 
         try {
             Form f("A1", Form::MIN_GRADE + 1, 42);
-        } catch (std::exception&) {
+        } catch (Form::GradeTooLowException&) {
             std::cout << "tried to create a form with the sign grade too low" << std::endl;
         }
 
         try {
             Form f("A1", 33, Form::MAX_GRADE - 1);
-        } catch (std::exception&) {
+        } catch (Form::GradeTooHighException&) {
             std::cout << "tried to create a form with the execute grade too high" << std::endl;
         }
 
         try {
             Form f("A1", 33, Form::MIN_GRADE + 1);
-        } catch (std::exception&) {
+        } catch (Form::GradeTooLowException&) {
             std::cout << "tried to create a form with the execute grade too low" << std::endl;
         }
     }
