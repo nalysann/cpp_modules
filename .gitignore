@@ -48,3 +48,11 @@ test_fallout
 test_warhammer
 test_materia
 test_mining
+
+# module 05
+test_bureaucrat
+test_form
+test_concrete_forms
+test_intern
+test_office_block
+test_central_bureaucracy
