@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 #include "SuperTrap.hpp"
 
 SuperTrap::SuperTrap(const std::string& name)

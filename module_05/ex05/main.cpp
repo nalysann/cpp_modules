@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include <sstream>
 
@@ -5,6 +7,8 @@
 #include "CentralBureaucracy.hpp"
 
 int main() {
+    srand(time(NULL));
+
     CentralBureaucracy cb;
 
     const size_t BUREAUCRACY_LEVEL = 20;

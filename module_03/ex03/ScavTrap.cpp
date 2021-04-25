@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(const std::string& name)

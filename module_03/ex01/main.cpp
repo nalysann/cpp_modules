@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
@@ -26,6 +27,8 @@ int main() {
         frag.vaulthunter_dot_exe("Apollo");
         frag.vaulthunter_dot_exe("Apollo");
     }
+
+    std::cout << std::endl;
 
     {
         srand(time(NULL));

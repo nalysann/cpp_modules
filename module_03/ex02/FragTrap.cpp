@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(const std::string& name)

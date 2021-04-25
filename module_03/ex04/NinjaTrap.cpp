@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
 
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "ScavTrap.hpp"
 
 NinjaTrap::NinjaTrap(const std::string& name)
         : ClapTrap(60,

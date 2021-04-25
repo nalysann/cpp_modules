@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
 
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "ScavTrap.hpp"
 
 NinjaTrap::NinjaTrap(const std::string& name)
         : ClapTrap(60,
@@ -63,7 +66,7 @@ void NinjaTrap::ninjaShoebox(FragTrap& frag) const {
 
 void NinjaTrap::ninjaShoebox(NinjaTrap& ninja) const {
     std::cout << _type << ' ' << _name << " whispers "
-              << "\"This is my mission, you idiot!\"." << std::endl;
+              << "\"This is MY mission, you idiot!\"." << std::endl;
     rangedAttack(ninja.getType() + ' ' + ninja.getName());
     ninja.takeDamage(_rangeDamage);
 }

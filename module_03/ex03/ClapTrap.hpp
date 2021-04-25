@@ -8,7 +8,7 @@ class ClapTrap {
     explicit ClapTrap(const std::string& name);
     ClapTrap(const ClapTrap& other);
     ClapTrap& operator=(const ClapTrap& other);
-    ~ClapTrap();
+    virtual ~ClapTrap();
 
     void meleeAttack(const std::string& target) const;
     void rangedAttack(const std::string& target) const;
