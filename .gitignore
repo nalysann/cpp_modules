@@ -56,3 +56,8 @@ test_concrete_forms
 test_intern
 test_office_block
 test_central_bureaucracy
+
+# module 06
+convert
+test_serialization
+test_identification
