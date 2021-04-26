@@ -61,3 +61,8 @@ test_central_bureaucracy
 convert
 test_serialization
 test_identification
+
+# module 07
+whatever
+test_iter
+test_array
