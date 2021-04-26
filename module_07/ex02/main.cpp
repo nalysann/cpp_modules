@@ -44,4 +44,8 @@ int main() {
     } catch (std::exception&) {
         std::cout << "Bad index exception caught!" << std::endl;
     }
+    std::cout << std::endl;
+
+    Array<char> empty_char_array;
+    std::cout<< "empty char: " << empty_char_array << std::endl;
 }
