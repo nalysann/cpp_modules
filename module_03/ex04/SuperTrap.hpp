@@ -8,6 +8,7 @@
 
 class SuperTrap : public FragTrap, public NinjaTrap {
   public:
+    SuperTrap();
     explicit SuperTrap(const std::string& name);
     SuperTrap(const SuperTrap& other);
     SuperTrap& operator=(const SuperTrap& other);

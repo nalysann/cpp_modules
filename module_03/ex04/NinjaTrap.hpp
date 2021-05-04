@@ -9,6 +9,7 @@
 
 class NinjaTrap: public virtual ClapTrap {
   public:
+    NinjaTrap();
     explicit NinjaTrap(const std::string& name);
     NinjaTrap(const NinjaTrap& other);
     NinjaTrap& operator=(const NinjaTrap& other);
