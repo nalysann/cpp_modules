@@ -41,7 +41,11 @@ Fixed eval_number() {
         terminate("Invalid number");
     }
 
-    pos = expr.find_first_not_of("0123456789.", pos);
+    pos = expr.find_first_not_of("0123456789", pos);
+    if (expr[pos] == '.') {
+        ++pos;
+    }
+    pos = expr.find_first_not_of("0123456789", pos);
     std::istringstream iss(expr.substr(beg, pos - beg));
     skip_spaces();
     if (iss.str().find('.') != std::string::npos) {
